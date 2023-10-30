@@ -1,0 +1,14 @@
+kubectl info
+kubectl cluster-info
+kubectl get pods
+kubectl get nodes
+kubectl run testpod --image=busybox -it
+kubectl run testpod1 --image=alpine -it
+kubectl describe pods testpod
+kubectl delete pods testpod
+kubectl apply -f testpod.yml
+kubectl get service
+minikube service <service name from get service> --url
+kubectl port-forward --address 0.0.0.0 service/<service name from get service> 8080:80
+kubectl delete service <service name from get service>
+kubectl get deployments

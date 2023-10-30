@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-server
+  labels:
+    app: my-server
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: my-server
+  template:
+    metadata:
+      labels:
+        app: my-server
+    spec:
+      containers:
+      - name: web-server-container
+        image: lgandzii/my-apache2:1.1

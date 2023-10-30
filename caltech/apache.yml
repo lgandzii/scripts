@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  labels:
+    app: my-pod
+spec:
+  containers:
+    - name: web-server-container
+      image: lgandzii/my-apache2:1.1
