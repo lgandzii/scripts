@@ -1,0 +1,8 @@
+ansible IP -m ping
+ansible all -m shell -a "date"
+ansible all -m copy -a "src=./info dest=/home/ansible/"
+ansible java_hosts -m copy -a "src=./java_file dest=/home/ansible/"
+ansible webhosts -m file -a "path=/home/ansible/index.html state=touch"
+ansible-playbook ansible-java.yaml
+ansible java_hosts -m apt -a "name=default-jre state=present" --become
+

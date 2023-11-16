@@ -1,0 +1,6 @@
+ - hosts: java_hosts
+      become: true
+         tasks:
+           - name: creating file
+           file: path=/home/ansible/demo.java state=touch
+
