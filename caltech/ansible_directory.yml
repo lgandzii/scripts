@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+   - name: create directory
+     file:
+       path: /home/ansible/mydirectory
+       state: directory
+

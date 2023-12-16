@@ -1,0 +1,11 @@
+---
+- hosts: demo
+    user: ansible
+    become: yes
+    connection: ssh
+    tasks:
+     - name: install docker on nodes
+       action: yum name=docker state=present
+
+
+# to run playbook ---  ansible-playbook ansible_docker-install.yml

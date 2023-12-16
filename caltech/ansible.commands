@@ -5,4 +5,29 @@ ansible java_hosts -m copy -a "src=./java_file dest=/home/ansible/"
 ansible webhosts -m file -a "path=/home/ansible/index.html state=touch"
 ansible-playbook ansible-java.yaml
 ansible java_hosts -m apt -a "name=default-jre state=present" --become
+interpreter_python = /usr/bin/python
+
+#Install httpd with module yum, -b = "become" giving sudo privileges, state=present - install
+ansible demo -b -m yum -a "pkg=httpd state=present" 
+ansible demo -b -m yum -a "pkg=httpd state=absent"
+
+
+ansible demo -m file -a "path=/home/ansible/akshat1 state=directory"
+ansible all -m copy -a 'content="akshat is teaching ansible" dest=/home/ansible/akshatfile2.txt'
+
+#copy and execute script test1.sh
+ansible all -b -m copy -a"src=test1.sh dest=/root mode=755"
+ansible all -b -m shell -a"/root/test1.sh"
+ansible all -m script -a "test1.sh"
+
+#fetch files FROM nodes to server
+ansible all -m fetch  -a "src=akshatfile1.txt dest=/home/ansible/akshatfile1.txt"
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  vars:
+   package: httpd
+  connection: ssh
+  tasks:
+    - name: remove "{{package}}" server
+      action: yum name="{{package}}" state=absent
+
+

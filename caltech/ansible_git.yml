@@ -1,0 +1,18 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+    - name: install git
+      action: yum name=git state=present
+      #    - name: git clone
+      #action: git repo='https://github.com/akshu20791/apachewebsite' dest=/var/www/html/website
+    - name: git clone
+      git: 
+        repo: https://github.com/akshu20791/apachewebsite
+        dest: /var/www/html/website
+        clone: yes
+       
+
+

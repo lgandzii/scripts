@@ -1,0 +1,19 @@
+---
+- hosts: demo
+    user: ansible
+    become: yes
+    connection: ssh
+    tasks:
+     - name: remove docker on nodes
+       action: yum name=docker state=absent
+     - name: install apache
+       action: yum name=httpd state=present
+     - name: start httpd
+       action: service name=httpd state=started
+     - name: copy index.html
+       action: copy src=index.html dest=/var/www/html
+
+
+
+
+# to run playbook ---  ansible-playbook ansible_docker-install.yml
