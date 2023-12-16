@@ -1,0 +1,13 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  vars: 
+    package: httpd 
+  connection: ssh
+  tasks:
+    - name: install {{package}} server
+      action: yum name={{package}} state=present
+    - name: start {{package}}
+      action: service name={{package}} state=started 
+   

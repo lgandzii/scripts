@@ -1,0 +1,24 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  vars: 
+    webserver: httpd
+    location: /var/www/html/mylearnings
+    repo_link: https://github.com/akshu20791/apachewebsite  
+    repo: git  
+  tasks:
+     - name: install {{git}}
+       action: yum name="{{repo}}" state=present
+     - name: install "{{webserver}}" server
+       action: yum name={{webserver}} state=present
+     - name: start "{{webserver}}"
+       action: service name={{webserver}} state=restarted
+     - name: website gitclone
+       git:
+         repo: "{{repo_link}}"
+         dest: "{{location}}"
+         clone: yes
+
+
