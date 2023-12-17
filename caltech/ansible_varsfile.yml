@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  vars_files:
+    - vars.yml
+  connection: ssh
+  tasks:
+    - name: install {{pkg_name}} server
+      action: yum name="{{pkg_name}}" state="{{pkg_state}}"
+    - name: create file 
+      file: path={{file_path}} state={{file_state}}

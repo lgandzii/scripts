@@ -1,0 +1,4 @@
+pkg_name: httpd
+pkg_state: present
+file_path: /tmp/demo
+file_state: touch

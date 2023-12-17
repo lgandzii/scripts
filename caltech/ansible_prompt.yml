@@ -1,0 +1,15 @@
+---
+ - hosts: demo
+   become: yes
+   vars_prompt:
+    - name: pkg_name
+      prompt: Enter package name
+      private: false
+    - name: pkg_state
+      prompt: Enter package state
+      private: false
+   tasks:
+    - name: install package
+      action: yum name={{pkg_name}} state={{pkg_state}}
+    - name: start service
+      action: service name={{pkg_name}} state=restarted
