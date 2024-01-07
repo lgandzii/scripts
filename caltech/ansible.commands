@@ -23,6 +23,21 @@ ansible all -m script -a "test1.sh"
 #fetch files FROM nodes to server
 ansible all -m fetch  -a "src=akshatfile1.txt dest=/home/ansible/akshatfile1.txt"
 
+#Change vars in CLI
+ansible-playbook ans.yml --extra-vars path_name=/tmp/test.txt
+
+#create encrypted yml
+ansible-vault create myvault.yml
+#Change vault password
+ansible-vault rekey myvault.yml
+#Edit encrypted yml
+ansible-vault edit myvault.yml
+#run vault yml
+ansible-playbook myvault.yml --ask-vault-pass
+#encrypt yml
+ansible-vault encrypt my.yml
+#decrypt yml
+ansible-vaule decrypt my.yml
 
 
 

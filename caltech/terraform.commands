@@ -1,0 +1,10 @@
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+#destroy specific resource
+terraform destroy -target="aws_instance.terra1"
+#check state
+terraform state list
+

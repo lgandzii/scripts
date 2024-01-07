@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  tasks:
+    - name: install httpd
+      action: yum name=httpd state=present
+      when: ansible_os_family == "Redhat"
+    - name: install docker
+      action: yum name=docker state=present
+      when: ansible_os_family == "Redhat"
+

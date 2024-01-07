@@ -1,0 +1,21 @@
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# Configure the GitHub Provider
+provider "github" {
+  token = "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"
+}
+
+resource "github_repository" "terraform_test" {
+  name        = "terraform_test"
+  description = "Test repo for terraform"
+
+  visibility = "public"
+}
+

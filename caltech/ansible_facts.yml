@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  user: ansible
+  tasks:
+    - name: show ip address of hosts
+      debug:
+        msg="The IP of the host os {{ansible_default_ipv4.address}}"
+    - name: print variables
+      debug:
+       var=ansible_os_family

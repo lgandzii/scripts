@@ -1,0 +1,25 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: present
+      notify: restart apache
+    - name: install docker
+      yum:
+        name: docker
+        state: present
+      notify: restart docker
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
+    - name: restart docker
+      service:
+        name: docker
+        state: restarted
+

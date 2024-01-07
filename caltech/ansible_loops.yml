@@ -1,0 +1,17 @@
+---
+- hosts: demo
+  user: ansible
+  become: yes
+  tasks:
+   - name: add list of users
+     user: name={{item}} state=present
+     with_items:
+        - akshat1
+        - akshat2
+        - akshat3
+   - name: install multiple packages
+     action: yum name='{{item}}' state=present
+     with_items:
+        - wget
+        - zip
+        - docker
