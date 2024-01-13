@@ -1,0 +1,516 @@
+Terraform
+
+mkdir terraformpractice
+
+cd terraformpractice
+
+vi ec2.tf
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53AG524UH4"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = "t2.micro"
+}
+
+(update access and secret access key)
+
+
+press esc :wq
+
+2) terraform init
+
+3) terraform plan
+
+4) terraform apply
+
+5) terraform destroy
+
+##############
+
+Ques: how we can give name of machine
+
+vi ec2.tf
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53AG524UH4"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = "t2.micro"
+tags = {
+    Name = "myfirstmachine"
+  }
+}
+
+##MACHINE2
+
+
+resource "aws_instance" "akshatresource-1" {
+  ami = "ami-06938c7701be658b4"
+  instance_type = "t2.micro"
+tags = {
+    Name = "myfirstmachine-1"
+  }
+}
+
+
+terraform plan
+
+terraform apply 
+
+terraform destroy
+
+terraform apply
+
+
+################
+
+
+Ques: i want to only destroy one resource . how can i do it?
+
+terraform destroy -target aws_instance.akshatresource-1
+
+#####################
+
+## using count in terraform 
+
+Ques: i want to create 10 replica machines how can i do it?
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53DQU26TPY"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = "t2.micro"
+  count = 10
+tags = {
+    Name = "myfirstmachine"
+  }
+}
+
+###########################
+
+Ques: i want to delete one instance out of the 100 instances created above..how can we do it?
+
+terraform state list
+
+terraform destroy -target aws_instance.akshatresource[5]
+
+#############################
+
+Ques: Create a Github repo from terraform 
+
+go to your github account -> go to settings -> go to developer settings -> generate PAT 
+
+
+vi github.tf
+
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+
+# Configure the GitHub Provider
+provider "github" {
+ token = "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"
+}
+
+resource "github_repository" "learningdevops" {
+  name        = "learningdevops"
+  description = "My awesome codebase"
+
+  visibility = "public"
+
+}
+
+
+terraform init
+
+terraform apply
+
+####################
+
+
+Ques: lets delete tfstate file and backup ...and then when we try to run terraform apply what happens?
+
+It will recreate the resources for me 
+
+
+################
+
+
+Ques: I want to create elastic ip and attach the elastic ip with the ec2 machine 
+
+
+
+vi ec2.tf
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53DQU26TPY"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = "t2.micro"
+  count = 1
+tags = {
+    Name = "myfirstmachine"
+  }
+}
+
+vi eip.tf
+
+resource "aws_eip" "lb" {
+  domain   = "vpc"
+}
+
+
+vi eip-associate.tf
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.akshatresource[0].id
+  allocation_id = aws_eip.lb.id
+}
+
+
+
+terraform apply
+
+#########################
+
+Ques: Suppose i want to see the output as well....
+
+vi eip.tf
+
+
+(add below content)
+
+output "eip"{
+ value = aws_eip.lb.public_ip
+}
+
+
+terraform plan
+
+(you will see eip as output)
+
+
+###################
+
+#Variables 
+
+In terraform, variables is a parameter that can be passed into a module or configuration at runtime . Variables allows you to make your 
+terraform code more felxible and resuable by providing a way to customise the behaviour of your module or configuration without hardcoding the values
+
+
+variable "teacher"{
+   default = "akshat"
+}
+
+var.teacher is our trainer . var.teachr is teaching devops. //.....
+
+
+terraform apply -> akshat would be passed as var.teacher
+
+
+terraform apply -var teacher=john -> rather then akshat the var.teacher woudl be picked as john 
+
+
+####
+Ques: i want instance type to be used as a variable in the codes
+
+vi varaibles.tf
+
+variable "instancetype"{
+  default = "t3.medium"
+}
+
+
+vi ec2.tf
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53MKP7KDTR"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = var.instancetype
+tags = {
+    Name = "myfirstmachine"
+  }
+} 
+
+terraform apply   #will take default value as t3.medium
+
+terraform apply -var instancetype=t3.micro #will take custom value as t3.micro 
+
+
+##################
+
+Ques: i want to create an IAM user with name akshatg 
+
+
+vi user.tf
+
+resource "aws_iam_user" "lb" {
+  name = "akshatg"
+}
+##############################
+
+
+# LOCALS : A local value assigns a name to an expression, allowing it to be used multiple times within a module without repeating it . 
+
+
+
+Ques: Add three tags to a ec2 machine owner="devopsteam", service = "backend" , Name = "mymachine"
+
+vi local-values.tf
+
+locals{
+    common_tags = {
+ Owner = "DevopsTeam"
+ service = "backend"
+ Name = "mymachine"
+ }
+}
+
+
+vi ec2.tf
+
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAU6GUCH53MKP7KDTR"
+  secret_key = "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"
+}
+
+## Create ec2  machine
+
+resource "aws_instance" "akshatresource" {
+  ami           = "ami-06938c7701be658b4" #windows ami
+  instance_type = var.instancetype
+tags = local.common_tags
+}
+
+
+####################
+
+Ques: i want you to create S3 bucket with name as variable and output the name of the s3 bucket .
+
+
+resource "aws_s3_bucket" "s3b" {
+  bucket = var.s3name
+  tags = local.s3tags
+}
+output "s3name"{
+ value = aws_s3_bucket.s3b.id
+}
+variable "s3name" {
+  default = "mys3bucket000111"   #this name is globally unique...try to keep some very uniquye name 
+}
+  s3tags = {
+   Name = "MyTests3"
+   Owner = "devops"
+ }
+#############################################
+
+
+
+Terraform Security 
+
+
+aws configure
+(put access and secret access key there)
+
+go to ec2.tf and remove the access key and secret access key
+
+and this time when you run terraform apply it will not ask you for access key and secret access key
+
+#################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

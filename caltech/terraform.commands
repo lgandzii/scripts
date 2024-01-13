@@ -8,3 +8,6 @@ terraform destroy -target="aws_instance.terra1"
 #check state
 terraform state list
 
+#Configure access to AWS (Username, Key etc.)
+aws configure  #apt install awscli
+

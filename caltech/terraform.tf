@@ -10,3 +10,23 @@ resource "aws_instance" " terra1" {
   Name = "Terraform_test"
  }
 }
+
+#Assign elastic IP
+
+resource "aws_eip" "elasticip" {
+  domain   = "vpc"
+}
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.terra1.id
+  allocation_id = aws_eip.elasticip.id
+}
+
+#Output 
+
+output "eip"{
+ value = aws_eip.elasticip.public_ip
+}
+
+
+
