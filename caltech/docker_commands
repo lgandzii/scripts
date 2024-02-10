@@ -1,0 +1,37 @@
+#Docker default dir /var/lib/docker
+
+docker build -t ~image_name~ . -f Dockerfile
+#run detached container
+docker container run -d --name test1 ubuntu
+#run container in interactive mode
+docker container run -it --name test1 ubuntu
+#connect to running container
+docker container exec -it <<container name>> bash
+#Show recource usage
+docker stats
+#Storage usage
+docker system df
+#Remove container
+docker container rm test_container
+#Map volume located in /var/lib/docker/volumes/simplvol/
+docker run -d --name test2 -p 8080:80 -v simplvol:/var/ nginx
+#Show volumes
+docker volume ls
+#Logs 
+docker logs <<container name>>
+#Delete all stopped containers
+docker container prune
+#Copy file into docker container
+docker container cp source id:/path
+#Show images
+docker image ls
+#Remove image
+docker image rm ~image~
+#Change tag
+docker image tag oldname newname
+#
+#
+
+
+
+
