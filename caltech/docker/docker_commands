@@ -1,0 +1,73 @@
+#Docker default dir /var/lib/docker
+
+docker build -t ~image_name~ . -f Dockerfile
+#run detached container
+docker container run -d --name test1 ubuntu
+#run container in interactive mode
+docker container run -it --name test1 ubuntu
+#connect to running container
+docker container exec -it <<container name>> bash
+#Show recource usage
+docker stats
+#Storage usage
+docker system df
+#Rename container
+docker container rename oldname newname
+#Remove container
+docker container rm test_container
+#Map volume located in /var/lib/docker/volumes/simplvol/
+docker run -d --name test2 -p 8080:80 -v simplvol:/var/ nginx
+#Show volumes
+docker volume ls
+#Logs 
+docker logs <<container name>>
+#Delete all stopped containers
+docker container prune
+#Copy file into docker container
+docker container cp source id:/path
+#Show images
+docker image ls
+#Remove image
+docker image rm ~image~
+#Change tag
+docker image tag oldname newname
+#
+#Delete container after using
+docker container exec -it --rm <<container name>> bash
+
+#Pass environment variable
+docker container run -it -env dbname=proddb --name test1 ubuntu
+#Image history
+docker image history <<image>>
+#Save running container into image 
+docker container commit ID helpimage
+#Save image in tar 
+docker save helpimage > helpimage.tar
+#Load from tar
+docker load < helpimage.tar
+#SHow only ID 
+docker image ls --format '{{.ID}}'
+#Filtering 
+docker image --filter "before=test1" 
+#
+docker container inspect
+#
+docker inspect image
+#Delete all containers and images
+docker system prune
+#
+docker network ls
+#Create network bridge driver
+docker network create --driver bridge  mynet
+#
+docker network connect network1 container
+docker network disconnect network1 container
+#Run container with HOST networking
+docker container run -d --network host --name hostnetcontainer nginx
+#
+#
+#
+#
+#
+
+
