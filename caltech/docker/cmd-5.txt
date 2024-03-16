@@ -1,0 +1,210 @@
+ 1003  docker-compose down
+ 1004  docker container ls
+ 1005  ls
+ 1006  cd elk_new/
+ 1007  ls
+ 1008  cd docker-elk/
+ 1009  ls
+ 1010  docker-compose down
+ 1011  cd
+ 1012  docker container ls
+ 1013  docker container ls -a
+ 1014  #docker swarm
+ 1015  docker swarm init
+ 1016  docker node ls
+ 1017  hostname -i
+ 1018  docker node ls
+ 1019  docker node rm ad2179r56e8h3ivxhbxcoyn3g
+ 1020  docker node ls
+ 1021  docker node rm ad2179r56e8h3ivxhbxcoyn3g
+ 1022  docker swarm ca-rotate
+ 1023  docker swarm ca --rotate
+ 1024  docker node ls
+ 1025  #docker swarm ca --rotate
+ 1026  docker node ls
+ 1027  docker swarm join --token worker
+ 1028  docker swarm join -h
+ 1029  docker swarm join --token worker
+ 1030  docker swarm join --token
+ 1031  docker swarm join--token worker
+ 1032  docker swarm join-token worker
+ 1033  docker node ls
+ 1034  cd /var/lib/docker/swarm/certificates/
+ 1035  ls
+ 1036  ##docker swarm ca --rotate
+ 1037  cd
+ 1038  docker swarm join-token worker
+ 1039  docker node ls
+ 1040  docker swarm join-token manager
+ 1041  docker node ls
+ 1042  docker node rm sdluf6z85p50oz8pg0kzrcka3
+ 1043  docker node ls
+ 1044  docker swarm join-token manager
+ 1045  docker swarm join-token worker
+ 1046  docker node ls
+ 1047  docker node demote agent
+ 1048  docker node ls
+ 1049  #docker node demote agent
+ 1050  #docker node promote agent
+ 1051  docker node promote agent
+ 1052  docker node ls
+ 1053  docker node update --availability drain node-2
+ 1054  docker node ls
+ 1055  docker node update --availability ative node-2
+ 1056  docker node update --availability active node-2
+ 1057  docker node ls
+ 1058  #docker service create --name webserver nginx
+ 1059  #docker container run --name testcont nginx
+ 1060  docker service create --name webserver nginx
+ 1061  docker service ls
+ 1062  docker container ls
+ 1063  docker service ps
+ 1064  docker service ls
+ 1065  docker service ps webserver
+ 1066  docker container ls
+ 1067  #docker service create --name webserver nginx
+ 1068  docker node ls --show-labels
+ 1069  docker node ls --labels
+ 1070  docker node ls -h | grep -i labels
+ 1071  docker node ls -h | grep -i label
+ 1072  docker node -h
+ 1073  docker node ls
+ 1074  doker node inspect  master
+ 1075  docker node inspect  master
+ 1076  docker node inspect  master | grep -i label
+ 1077  docker node update --label-add env=prod master
+ 1078  docker node inspect  master | grep -i label
+ 1079  docker node inspect  master | grep -i -A4 label
+ 1080  docker service ls
+ 1081  ##docker service create --constraint  --name proderver nginx
+ 1082  docker node update --label-add env=test agent
+ 1083  docker service create --constraint node.labels.env=test  --name testerver nginx
+ 1084  docker service create --constraint node.labels.env==test  --name testerver nginx
+ 1085  docker service ls
+ 1086  docker service ps testerver
+ 1087  #docker node inspect  master | grep -i -A4 label
+ 1088  #docker node update --label-add env=test agent
+ 1089  #docker service create --constraint node.labels.env==test  --name testerver nginx
+ 1090  docker service ls
+ 1091  docker node ls
+ 1092  history | grep -i availability
+ 1093  docker node update --availability drain agent
+ 1094  docker node ls
+ 1095  docker service ps testerver
+ 1096  docker node ls
+ 1097  docker service ps testerver
+ 1098  docker service ps testerver --no-trunc
+ 1099  docker node ls
+ 1100  docker node update --label-add env=test node-2
+ 1101  docker service ps testerver --no-trunc
+ 1102  docker service ps testerver
+ 1103  docker node ls
+ 1104  docker node update --availability ative agent
+ 1105  docker node update --availability active agent
+ 1106  docker node ls
+ 1107  docker service ps testerver
+ 1108  docker node ls
+ 1109  docker node update --availability drain node-2
+ 1110  docker node update --availability active node-2
+ 1111  docker service ls
+ 1112  docker service scale testserver=2
+ 1113  docker service scale testerver=2
+ 1114  docker service ls
+ 1115  docker service ps testerver
+ 1116  docker node update --label-rm env=test node-2
+ 1117  docker node ls | grep -i -A 4 label
+ 1118  docker node ls | grep -i -A4 label
+ 1119  docker node inspect | grep -i -A4 label
+ 1120  docker node inspect agent | grep -i -A4 label
+ 1121  docker node update --label-rm env=test agent
+ 1122  docker node update -h
+ 1123  docker node update --label-rm agent
+ 1124  docker node update --label-rm env agent
+ 1125  docker node update --label-rm env node-2
+ 1126  docker node inspect agent | grep -i -A4 label
+ 1127  # corect comand  --> docker node update --label-rm env agent
+ 1128  docker node ls
+ 1129  docker service ls
+ 1130  ##docker service create --constraint node.labels.env==test  --name testerver nginx
+ 1131  docker service ps testerver
+ 1132  docker service ps testerver --no-trunc
+ 1133  docker node ls
+ 1134  docker service ls
+ 1135  docker service rm testerver
+ 1136  docker service ls
+ 1137  docker service create  --name testserver --replicas=3 nginx
+ 1138  docker servie ls
+ 1139  docker service ls
+ 1140  docker service ps mki0as1cv35n
+ 1141  docker container ls
+ 1142  docker service ls
+ 1143  #replicated and oter one is global
+ 1144  docker service ls
+ 1145  docker service scale testserver=5
+ 1146  docker service ls
+ 1147  docker service ps testserver
+ 1148  docker service create  --mode global --name globalservice  nginx
+ 1149  docker service ps testserver
+ 1150  docker service ps globalservice
+ 1151  #docker service create  --mode global --name globalservice  nginx
+ 1152  docker service ls
+ 1153  #docker service create  --mode global --name globalservice  nginx
+ 1154  #docker service create  --name testserver --replicas=3 nginx
+ 1155  docker service ls
+ 1156  docker node ls
+ 1157  docker service ps globalservice
+ 1158  docker service scale testserver=3
+ 1159  docker node ls
+ 1160  docker service ls
+ 1161  docker service scale globalservice=5
+ 1162  docker service inspect webserver
+ 1163  docker service inspect webserver --pretty
+ 1164  docker service ls
+ 1165  docker service scale testserver=1
+ 1166  history | grep drain
+ 1167  docker node update --availability drain node-2
+ 1168  ls
+ 1169  cd  docker/
+ 1170  ls
+ 1171  docker service ls
+ 1172  docker service rm testserver
+ 1173  docker service rm globalservice
+ 1174  ls
+ 1175  vi stack.yaml
+ 1176  #docker-compose up -d
+ 1177  docker stack deploy -c stack.yaml mystack
+ 1178  vi stack.yaml
+ 1179  cd
+ 1180  cd -
+ 1181  docker network ls
+ 1182  #docker swarm init
+ 1183  docker network create --driver overlay dev
+ 1184  docker network ls
+ 1185  docker stack deploy -c stack.yaml mystack
+ 1186  docker stack ls
+ 1187  vi stack.yaml
+ 1188  docker stack ps mystack
+ 1189  docker stack rm mystack
+ 1190  docker stack ls
+ 1191  cd
+ 1192  cd /var/lib/docker
+ 1193  ls
+ 1194  cd swarm
+ 1195  ls
+ 1196  cd ..
+ 1197  ls
+ 1198  cp -rf swarm /home/salil/
+ 1199  rm -rf swarm/
+ 1200  docker node ls
+ 1201  docker service ls
+ 1202  docker node ls
+ 1203  docker service rm webserver
+ 1204  docker node ls
+ 1205  docker service ls
+ 1206  pwd
+ 1207  ls
+ 1208  cp -rf /home/salil/swarm .
+ 1209  s -ltr
+ 1210  ls -ltr
+ 1211  docker service ls
+ 1212  docker node ls

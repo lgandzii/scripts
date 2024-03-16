@@ -1,0 +1,188 @@
+ 1000  yum remove docker
+ 1001  docker --version
+ 1002  yum insatll docker
+ 1003  yum install docker
+ 1004  docker --version
+ 1005  cat /etc/os-release
+ 1006  free -g
+ 1007  free -m
+ 1008  lscpu
+ 1009  df -h
+ 1010  docker --version
+ 1011  docker container ls
+ 1012  systemctl start docker
+ 1013  systemctl status docker
+ 1014  systemctl enable docker
+ 1015  docker container ls
+ 1016  docker image ls
+ 1017  docker system prune
+ 1018  docker image ls
+ 1019  docker image rm -f  da150543ca69 da150543ca69 f73055dd8471 1a2e54094f90 a9d66de211bb 9cd5354d52e0 9cd5354d52e0 9cd5354d52e0 af772e378432 85eb5968df24 a6d68021fe9a a6d68021fe9a bc823df9ead2 a6ca7b52a415 d453dd892d93 bdba757bc933  e4c58958181a 7d3c40f240e1  295c7be07902
+ 1020  docker image ls
+ 1021  docker image rm 71260f256d19
+ 1022  docker image ls
+ 1023  history
+ 1024  docker --version
+ 1025  docker container ls
+ 1026  docker ps
+ 1027  docker image ls
+ 1028  docker images
+ 1029  docker container run nginx
+ 1030  docker container run -it nginx
+ 1031  docker container run -it ubuntu
+ 1032  docker container run -d ubuntu
+ 1033  docker container run -d nginx
+ 1034  docker run -d nginx
+ 1035  docker run -d ubuntu
+ 1036  docker container run -i ubuntu
+ 1037  docker container run -t ubuntu
+ 1038  docker container run -it ubuntu
+ 1039  docker container run -d ubuntu
+ 1040  docker container ls
+ 1041  docker container ls -a
+ 1042  docker container ls
+ 1043  docker container run -d ubuntu
+ 1044  docker container run -d nginx
+ 1045  docker container ls
+ 1046  docker container run -d --name testcont nginx
+ 1047  docker container ls
+ 1048  docker container ls -a
+ 1049  docker system prune
+ 1050  docker container ls -a
+ 1051  docker container rm -f $(docker ps -qa)
+ 1052  docker container ls -a
+ 1053  docker container run -d --name testcont ubuntu
+ 1054  docker container ls -a
+ 1055  docker container run -d --name testcont ubuntu sleep 300
+ 1056  docker container run -d --name testcont1 ubuntu sleep 300
+ 1057  docker container ls -a
+ 1058  docker container run -d --name testcont2 ubuntu sleep 30
+ 1059  docker container ls -a
+ 1060  watch docker container ls -
+ 1061  watch docker container ls -a
+ 1062  docker container ls -a
+ 1063  docker container run -it --name testcont3 ubuntu
+ 1064  docker container ls -a
+ 1065  docker container run -d --name testcont4 ubuntu
+ 1066  askd;lasdk
+ 1067  slkf;ls
+ 1068  docker container run -it --name testcont5 ubuntu
+ 1069  docker container ls -a
+ 1070  docker container run -it --name testcont3 ubuntu
+ 1071  docker container run -it --name testcont6 ubuntu
+ 1072  docker container ls -a
+ 1073  docker container ls
+ 1074  docker container ls -a
+ 1075  docker container rm 45b64b094065
+ 1076  docker container ls -a
+ 1077  docker container rm 3bac
+ 1078  docker container ls
+ 1079  docker container ls -a
+ 1080  docker container rm testcont4
+ 1081  docker container ls -a
+ 1082  docker container run -d --name testcont4 nginx
+ 1083  docker container ls
+ 1084  docker container rm 29f6f662060a
+ 1085  docker container ls
+ 1086  docker container stop 29f6f662060a
+ 1087  docker container ls
+ 1088  docker container ls -a
+ 1089  docker container start 29f6f662060a
+ 1090  docker container ls
+ 1091  docker container ls -a
+ 1092  docker container start 22ae85095d1d
+ 1093  docker container ls -a
+ 1094  docker container rm 29f6f662060a
+ 1095  docker container rm -f 29f6f662060a
+ 1096  docker container rm -f 22ae85095d1d
+ 1097  docker container ls -a
+ 1098  docker container run -d --name testcont4 nginx
+ 1099  docker container ls -a
+ 1100  docker container stop 03cf3562c39e
+ 1101  docker container rm 03cf3562c39e
+ 1102  #docker container rm -f 22ae85095d1d
+ 1103  docker container run -d --name testcont4 nginx
+ 1104  docker container ls
+ 1105  docker container pause ec8db4819f35
+ 1106  docker container ls
+ 1107  docker container unpause ec8db4819f35
+ 1108  docker container ls
+ 1109  #docker container rm -f testcont4
+ 1110  docker container rm -f testcont4
+ 1111  docker container ls
+ 1112  docker container run -d --name testcont4 nginx
+ 1113  docker container ls
+ 1114* docker container rename testcont4 mycont\
+ 1115  docker container ls
+ 1116  docker container exec -it mycont bash
+ 1117  docker container exec -it mycont
+ 1118  docker container exec -it mycont sh
+ 1119  docker container exec -it mycont date
+ 1120  docker container exec -it mycont uptime
+ 1121  docker container exec -it mycont ls
+ 1122  docker container exec -it mycont bash
+ 1123  cat /etc/shells
+ 1124  docker container exec -it mycont bash
+ 1125  docker container exec -it mycont sh
+ 1126  docker container exec -it mycont bash
+ 1127  #docker container exec -it mycont bash
+ 1128  docker container exec -it mycont bash
+ 1129  docker container ls
+ 1130  docker container exec -it mycont bash
+ 1131  docker container ls
+ 1132  docker container stop mycont
+ 1133  docker container start mycont
+ 1134  docker container run -d --name testcont5 -v /tmp:/etc/ nginx
+ 1135  docker container prune
+ 1136  docker container run -d --name testcont5 -v /tmp:/etc/ nginx
+ 1137  docker container run -d --name testcont6  nginx
+ 1138  docker container ls
+ 1139  docker top
+ 1140  docker top f8eaec5de693
+ 1141  docker stat
+ 1142  docker stats
+ 1143  free -m
+ 1144  docker df
+ 1145  docker df -f
+ 1146  docker df -h
+ 1147  docker df
+ 1148  docker -h | grep df
+ 1149  docker --help | grep df
+ 1150  docker system df
+ 1151  docker container ls
+ 1152  docker container ls -a
+ 1153  docker container rm 111baf5ff701
+ 1154  docker container ls -a
+ 1155  docker system df
+ 1156  docker container ls -a
+ 1157  docker container ls
+ 1158  docker container ls -a
+ 1159  docker container stop f8eaec5de693
+ 1160  docker container kill 23b7c678405b
+ 1161  docker container ls -a
+ 1162  docker container run -d --name testcont  nginx
+ 1163  docker container ls -a
+ 1164  cd /var/lib/docker
+ 1165  ls
+ 1166  cd containers
+ 1167  ls
+ 1168  docker container ls -a
+ 1169  docker container rm  f8eaec5de693
+ 1170  ls
+ 1171  cd 23b7c678405bc602aef820dcf56bd00fd20590f3efde99ee97f20ff17a572691
+ 1172  ls
+ 1173  cd ..
+ 1174  cd
+ 1175  docker container ls -a
+ 1176  docker container rm -f 23b7c678405b
+ 1177  docker container ls
+ 1178  docker container exec -it f162cde98d28 bash
+ 1179  docker container ls
+ 1180  hostname -i
+ 1181  systemctl stop httpd
+ 1182  docker container ls
+ 1183  #port mapping
+ 1184  docker container run -d -p 88:80  --name maincont  nginx
+ 1185  docker container ls
+ 1186  #docker container run -d -p 88:80  --name maincont  nginx
+ 1187  h

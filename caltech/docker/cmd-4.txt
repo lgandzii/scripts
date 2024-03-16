@@ -1,0 +1,290 @@
+ 1006  vi Dockerfile
+ 1007  history | grep env
+ 1008  history | grep build-arg
+ 1009  vi Dockerfile
+ 1010  docker build -t myimg:17.0 ,
+ 1011  docker build -t myimg:17.0 .
+ 1012  docker container run -it --name mycont4 myimg:17.0 bash
+ 1013  docker container run -it --name mycont7 myimg:17.0 bash
+ 1014  cat Dockerfile
+ 1015  vi Dockerfile-3
+ 1016  docker build -t newimg:onbuild -f Dockerfile-3 .
+ 1017  docker container run -it --name mycont8 newimg:onbuild bash
+ 1018  vi Dockerfile
+ 1019  doker container ls
+ 1020  docker container ls
+ 1021  docker container ls -a
+ 1022  docker container prune
+ 1023  docker container ls -a
+ 1024  docker container run -d --name mycont nginx bash
+ 1025  docker container ls
+ 1026  docker container prune
+ 1027  docker container run -d --name mycont nginx
+ 1028  docker container ls
+ 1029  #docker container stop mycont
+ 1030  #docker container kill mycont
+ 1031  #SIG 9 15
+ 1032  vi Dockerfile
+ 1033  docker image ls
+ 1034  docker image history nginx
+ 1035  docker image history nginx --no-trunc
+ 1036  #docker image history nginx --no-trunc
+ 1037  #docker image history nginx
+ 1038  docker stats
+ 1039  docker system df
+ 1040  docker container ls -a
+ 1041  docker container ls -s
+ 1042  docker image prune
+ 1043  docker image ls
+ 1044  docker container ls
+ 1045  doker container exec -it 73968ce72924 bash
+ 1046  docker container exec -it 73968ce72924 bash
+ 1047  docker container commit 73968ce72924 helpimg
+ 1048  docker image ls
+ 1049  docker container ls
+ 1050  docker container rm -f 73968ce72924
+ 1051  docker container ls
+ 1052  docker save helpimg > helpimg.tar
+ 1053  ls -ltrh
+ 1054  docker image ls
+ 1055  docker image rm f213b8acbf31
+ 1056  docker image ls
+ 1057  docker container ls
+ 1058  #docker container commit 73968ce72924 helpimg
+ 1059  #docker save helpimg > helpimg.tar
+ 1060  docker load < helpimg.tar
+ 1061  docker image ls
+ 1062  docker container run -it helpimg bash
+ 1063  #docker container commit 73968ce72924 helpimg
+ 1064  #docker save helpimg > helpimg.tar
+ 1065  #docker load < helpimg.tar
+ 1066  #docker container run -it helpimg bash
+ 1067  ls -ltrh
+ 1068  docker image ls --filter "before=nginx"
+ 1069  docker image ls --filter "after=nginx"
+ 1070  docker image ls --filter "since=nginx"
+ 1071  docker image ls --format '{{ID}}'
+ 1072  docker image ls --format '{{.ID}}'
+ 1073  docker image ls --format '{{ID}}'
+ 1074  docker image ls --format '{{.ID}}'
+ 1075  echo $DOKER_CONTENT_TRUST
+ 1076  echo $DOCKER_CONTENT_TRUST
+ 1077  DOCKER_CONTENT_TRUST=1
+ 1078  echo $DOCKER_CONTENT_TRUST
+ 1079  DOCKER_CONTENT_TRUST=0
+ 1080  echo $DOCKER_CONTENT_TRUST
+ 1081  docker trust
+ 1082  #docker build
+ 1083  #buildkit
+ 1084  #LLB
+ 1085  docker --version
+ 1086  cd /var/lib/docker
+ 1087  ls
+ 1088  cd
+ 1089  docker container ls
+ 1090  docker container run -d --name newcont nginx
+ 1091  docker container ls
+ 1092  docker container inspect fd7ce9f01948
+ 1093  docker container inspect fd7ce9f01948 | grep -i build
+ 1094  docker image ls
+ 1095  docker inspect image 8dc91a89fb80
+ 1096  docker inspect  8dc91a89fb80 | grep -i build
+ 1097  docker inspect  nginx | grep -i build
+ 1098  docker volume ls
+ 1099  docker system prune
+ 1100  docker image ls
+ 1101  docker image rm -f f213b8acbf31 61b2255002e7 8dc91a89fb80 682bb73a9e21 2e4a4f3f39e9 19ccceaa6325 16f712ef1256 d2a2e452e3f0 7899cc967d56 9261d20305af  9a7148d41024 0184b2610dca
+ 1102  docker image ls
+ 1103  docker image rm -f b1d9e921c4fa
+ 1104  docker image ls
+ 1105  docker system prune
+ 1106  docker volume prune
+ 1107  docker image ls --format {{.ID}}
+ 1108  docker image ls
+ 1109  docker image ls --filter "before='9f7f530e584b'"
+ 1110  docker image ls --filter "before=9f7f530e584b"
+ 1111  docker image ls --filter "since=9f7f530e584b"
+ 1112  docker network ls
+ 1113  docker swarm leave
+ 1114  docker swarm leave --force
+ 1115  docker network ls
+ 1116  docker netowrk prune
+ 1117  docker network prune
+ 1118  docker network ls
+ 1119  docker container ls
+ 1120  docker container exec -it newcont bash
+ 1121  docker container inspect newcont
+ 1122  docker network ls
+ 1123  ip a s
+ 1124  docker network ls
+ 1125  ip a s
+ 1126  docker network ls
+ 1127  docker network create --driver bridge mynet
+ 1128  docker network ls
+ 1129  docker container ls
+ 1130  ip a s
+ 1131  docker container ls
+ 1132  docker container rm -f fd7ce9f01948
+ 1133  ip a s
+ 1134  docker container run -d --name mycont nginx
+ 1135  ip a s
+ 1136  docker container run -d --network mynet --name mycont1 nginx
+ 1137  ip a s
+ 1138  docker container ls
+ 1139  docker container inspect b3be5f8864f0
+ 1140  docker network ls
+ 1141  docker container inspect b3be5f8864f0
+ 1142  docker network ls
+ 1143  docker container inspect b3be5f8864f0
+ 1144  ip a s
+ 1145  docker container ls
+ 1146  docker container inspect 939807d659ff
+ 1147  ip a s
+ 1148  docker network ls
+ 1149  docker container ls
+ 1150  #docker container run -d --name mycont nginx
+ 1151  #docker container run -d --network mynet --name mycont1 nginx
+ 1152  #docker container run -d --name mycont nginx
+ 1153  #docker container run -d --network mynet --name mycont nginx
+ 1154  docker container ls
+ 1155  docker container rename mycont defaultnwcont
+ 1156  docker container rename mycont1 customnwcont
+ 1157  docker container ls
+ 1158  docker container run -d --network mynet --name customnwcont2 nginx
+ 1159  docker container run -d  --name defaultnwcont2 nginx
+ 1160  docker container ls
+ 1161  docker container exec -it defaultnwcont bash
+ 1162  docker container exec -it defaultnwcont2 bash
+ 1163  docker container exec -it customnwcont bash
+ 1164  docker container exec -it customnwcont2 bash
+ 1165  docker container exec -it defaultnwcont bash
+ 1166  docker container exec -it customnwcont bash
+ 1167  docker container exec -it defaultnwcont bash
+ 1168  docker container exec -it customnwcont bash
+ 1169  hostname -i
+ 1170  ls
+ 1171  docker container ls
+ 1172  docker network connect mynet defaultnwcont2
+ 1173  docker container exec -it defaultnwcont bash
+ 1174  docker container exec -it defaultnwcont2 bash
+ 1175  docker network connect mynet defaultnwcont
+ 1176  #docker network connect mynet defaultnwcont
+ 1177  docker container exec -it defaultnwcont bash
+ 1178  docker container inspect defaultnwcont
+ 1179  docker container ls
+ 1180  #docker network connect mynet defaultnwcont
+ 1181  docker network disconnect mynet defaultnwcont
+ 1182  docker container exec -it defaultnwcont bash
+ 1183  docker container inspect defaultnwcont
+ 1184  #docker network connect mynet defaultnwcont
+ 1185  #docker network disconnect mynet defaultnwcont
+ 1186  docker network ls
+ 1187  docker container run -d --network host --name hostnwcont nginx
+ 1188  docker container ls
+ 1189  docker container ls -a
+ 1190  docker logs a35915ac302b
+ 1191  docker container ls -a
+ 1192  docker logs hostnwcont
+ 1193  systemctl stop httpd
+ 1194  docker container rm -f  hostnwcont
+ 1195  docker container run -d --network host --name hostnwcont nginx
+ 1196  docker container ls
+ 1197  docker container rm -f hostnwcont
+ 1198  docker container run -d --network host --name hostnwcont nginx
+ 1199  docker container ls
+ 1200  docker network ls
+ 1201  docker container inspect hostnwcont
+ 1202  docker container ls
+ 1203  #docker container run -d --network host --name hostnwcont nginx
+ 1204  docker container rm -f hostnwcont
+ 1205  systemctl start httpd
+ 1206  docker container run -d --network host --name hostnwcont nginx
+ 1207  docker logs hostnwcont
+ 1208  #docker container run -d --network host --name hostnwcont nginx
+ 1209  docker container rm -f hostnwcont
+ 1210  docker container run -d --network host -p 8080:80 --name hostnwcont nginx
+ 1211  docker container ls -a
+ 1212  systemctl status httpd
+ 1213  #systemctl start nginx
+ 1214  docker network ls
+ 1215  #docker container create --driver bridge newnet
+ 1216  docker container create --driver bridge newnet
+ 1217  docker network create --driver bridge newnet
+ 1218  docker network ls
+ 1219  docker network create --driver host hostnet
+ 1220  ip a s
+ 1221  docker system prune
+ 1222  docker container inspect hostnwcont
+ 1223  docker system prune
+ 1224  docker volume prune
+ 1225  docker container ls -a
+ 1226  docker container rm -f b777b9806652 dbb9bf6f24c6 939807d659ff b3be5f8864f0
+ 1227  docker image ls
+ 1228  cd /var/lib/docker
+ 1229  ls
+ 1230  df -h
+ 1231  cd
+ 1232  cd /etc/docker
+ 1233  ls
+ 1234  vi daemon.json
+ 1235  ls -ld /mnt/newpath
+ 1236  mkdir /mnt/newpath
+ 1237  cd /mnt/
+ 1238  ls
+ 1239  rm -rf newdata/
+ 1240  rm -rf cuz
+ 1241  rm -rf cyz
+ 1242  cd
+ 1243  docker container ls
+ 1244  docker container run -d --name mycont nginx
+ 1245  docker container ls
+ 1246  cd /var/lib/docker
+ 1247  ls
+ 1248  cd  containers/
+ 1249  ls
+ 1250  cat /etc/docker/daemon.json
+ 1251  systemctl stop docker
+ 1252  systemctl start docker
+ 1253  systemctl daemon-reload
+ 1254  pwd
+ 1255  ls
+ 1256  docker container run -d --name newcont nginx
+ 1257  ls
+ 1258  pwd
+ 1259  cd /mnt/newpath/
+ 1260  ls
+ 1261  cat /etc/docker/daemon.json
+ 1262  #data-root = graph
+ 1263  cd
+ 1264  rm /etc/docker/daemon.json
+ 1265  systemctl restart docker
+ 1266  systemctl daemon-reload
+ 1267  systemctl status docker
+ 1268  ps -ef
+ 1269  ps -ef | head
+ 1270  docker container ls
+ 1271  docker container run -d --name mycont nginx
+ 1272  docker container rm -f mycont
+ 1273  docker container run -d --name mycont nginx
+ 1274  ps -ef | head
+ 1275  docker container exec -it mycont  bash
+ 1276  ps -ef | head
+ 1277  df -h
+ 1278  docker container exec -it mycont  bash
+ 1279  docker stats
+ 1280  free -m
+ 1281  #controlgroups = cgroups
+ 1282  systemctl status docker
+ 1283  less /usr/lib/systemd/system/docker.service
+ 1284  docker stats
+ 1285  ls
+ 1286  docker-compose
+ 1287  vi dokcer-compose.yaml
+ 1288* docker ontainer stop
+ 1289  ls
+ 1290  cat docker-compose.yaml
+ 1291  docker-compose up
+ 1292  docker-compose up -d
+ 1293  docker container ls
+ 1294  cat docker-compose.yaml
+ 1295  docker-compose down

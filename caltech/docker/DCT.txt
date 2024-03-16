@@ -1,0 +1,19 @@
+export DOCKER_CONTENT_TRUST=1
+docker trust key generate test
+docker trust signer add  --key /root/test.pub salil docker.io/salilkul87/myimg
+
+
+OR
+
+export DOCKER_CONTENT_TRUST=1
+docker image pull nigelpoulton/tu-demo
+docker image pull salilkul87/myimg:1.0
+
+####pull any official image from docker hub like nginx
+docker image pull nginx
+###tag the alpine image with your name
+docker image tag nginx salilkul87/newimg:1.0
+###push the image
+docker image push salilkul87/newimg:1.0
+##check the signed tag
+docker trust inspect docker.io/salilkul87/newimg:1.0 --pretty

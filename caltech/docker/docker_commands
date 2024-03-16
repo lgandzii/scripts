@@ -64,9 +64,17 @@ docker network connect network1 container
 docker network disconnect network1 container
 #Run container with HOST networking
 docker container run -d --network host --name hostnetcontainer nginx
+#Deny chown permission in container
+docker container run -it --cap-drop CHOWN --name testcontainer ubuntu
+#Limit memsize to 300M
+docker container run -d -m 300m --name test nginx
+#
+
 #
 #
 #
+#
+
 #
 #
 

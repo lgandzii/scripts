@@ -1,0 +1,51 @@
+version: '3.3'
+services:
+  demo-service:
+    image: ngin:latest
+    ports:
+     - target: 80
+       published: 9001
+       protocol: tcp
+    volumes:
+     - /mnt:/var/www
+#    env_file:
+#     - demo.env
+    environment:
+     - "PROFILES=dev"
+    networks:
+     - dev
+    logging:
+      driver: json-file
+    deploy:
+      restart_policy:
+        condition: on-failure
+          #      placement:
+          #        constraints:
+          #         - highconfig == app
+
+  another-service:
+    image: httpd:latest
+    ports:
+     - target: 80
+       published: 9002
+       protocol: tcp
+    volumes:
+     - /mnt:/var/www
+#    env_file:
+#     - demo.env
+    environment:
+     - "PROFILES=dev"
+    networks:
+     - dev
+    logging:
+      driver: json-file
+    deploy:
+      restart_policy:
+        condition: on-failure
+          #      placement:
+          #        constraints:
+          #         - highconfig == app
+
+networks:
+  dev:
+   external: true

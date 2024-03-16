@@ -1,0 +1,21 @@
+FROM ubuntu:14.04
+RUN apt-get update -y && apt-get install curl apache2 -y
+RUN useradd testuser
+LABEL author=salil
+ENV dbname=devdb
+ARG version=2
+RUN echo "your application is running with version $version" > version.txt
+#COPY newfile .
+COPY useradd.sh .
+ONBUILD ADD testfile .
+#COPY tmp.tar .
+ADD tmp.tar /home
+WORKDIR /
+#USER testuser
+#CMD ["bash" , "useradd.sh" , "salil" ]
+#ENTRYPOINT ["bash" , "useradd.sh" ]
+#ENTRYPOINT ["echo" , "hi sk karan" ]
+CMD [ "sleep", "6000"]
+#ENTRYPOINT [ "echo", "hi user2"]
+EXPOSE 8090
+HEALTHCHECK --interval=5s CMD ping -c3 loalhost

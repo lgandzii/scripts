@@ -1,0 +1,46 @@
+#Kubectl bash completion
+kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
+
+#crictl ERROR: FATA[0000] listing containers: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial unix /var/run/dockershim.sock: connect: no such file or directory"
+sudo crictl config --set runtime-endpoint=unix:///run/containerd/containerd.sock --set image-endpoint=unix:///run/containerd/containerd.sock
+
+vi /etc/default/kubelet
+KUBELET_EXTRA_ARGS="--cgroup-driver=cgroupfs"
+
+
+kubeadm version
+kubectl version
+kubelet --version
+#Initialize kubeadmin
+sudo kubeadm init
+#To start using your cluster, you need to run the following as a regular user:
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+kubectl get nodes
+#Show nodes in full mode
+kubectl get nodes -o wide
+#Show all pods ie --all-namespaces 
+kubectl get pods -A
+#Print join commad for join nodes
+sudo kubeadm token create --print-join-command
+#Show node description
+kubectl describe node <NODENAME>
+#
+kubectl get all -n kubernetes-dashboard
+#
+kubectl get pods -n kube-system
+#
+kubectl explain pod.spec.containers --recursive
+# Watch pods for changes
+kubectl get pod <PODNAME> -w
+#
+#
+#
+#
+#
+#
+#
+#
+#

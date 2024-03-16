@@ -1,0 +1,55 @@
+#Init swarm on master
+docker swarm init
+#Check swarm nodes
+docker node ls
+#Leave docker swarm
+docker swarm leave
+#Remove node from swarm
+docker node rm node_ID
+#Rotate certificate in swarm
+docker swarm ca --rotate
+#Get new join string after token changed
+docker swarm join-token worker
+#Join as manager
+docker swarm join-token manager
+#Demote host from manager to node
+docker node demote HOSTNAME
+#Make node not available for maintenance
+docker node update --availability drain HOSTNAME
+#Make node active after drain
+docker node update --availability active HOSTNAME
+#Create service like "container run --name  webserver nginx"
+docker service create --name webserver nginx
+#Show created services
+docker service ls
+#Show running service
+docker service ps SERVICENAME
+#Add label to a node
+docker node update --label-add env=prod NODE
+#Create service for nodes with label env=test
+docker service create --name prodserver --constraint node.labels.env==test nginx
+#Show all messages
+docker service ps prodserver --no-trunc
+#Run 2 copies of service
+docker service scale webserver=2
+#Remove labels env from node
+docker node update --label-rm env NODE
+#Create 3 replicas of service
+docker service create --name testserver --replicas=3 nginx
+#Create service on each nodes
+docker service create --mode global --name global nginx
+#Encrypt and lock docker (gives key to use docker commands with)
+docker swarm update --autolock=true
+#Unlock docker
+docker swarm update --autolock=false
+#Backup swarm state 
+cp -rf /var/lib/docker/swarm /mnt/backup
+#
+
+#
+#
+#
+#
+#
+#
+

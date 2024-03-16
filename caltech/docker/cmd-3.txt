@@ -1,0 +1,394 @@
+  606  cd docker/
+  607  ls
+  608  cd ..
+  609  ls
+  610  vi Dockerfile
+  611  docker image ls
+  612  docker container prune
+  613  docker image ls
+  614  docker image rm -f b690f5f0a2d5
+  615  docker image ls
+  616  vi Dockerfile
+  617  docker build -t myimg .
+  618  vi Dockerfile
+  619  docker image ls
+  620  docker image rm newimg
+  621  docker image ls
+  622  docker build -t myimg .
+  623  docker image ls
+  624  vi Dockerfile
+  625  ls
+  626  vi newfile
+  627  ls
+  628  docker container ;ls
+  629  docker container ls
+  630  docker container run -s --name testcont nginx
+  631  docker container run -d --name testcont nginx
+  632  docker container ls
+  633  ls
+  634  docker container cp newfile a5ec73fa36a4:/tmp/
+  635  docker container exec -it a5ec73fa36a4 bash
+  636  docker container ls
+  637  vi Dockerfile
+  638  docker build -t myimg:1.0 .
+  639  docker image ls
+  640  cat Dockerfile
+  641  docker container run -it --name mycont 2fc6f60965bd bash
+  642  docker container run -it --name mycont1 0184b2610dca  bash
+  643  docker container ls -a
+  644  doker container rm  f36d0d9aff84 7f2cd36c3272
+  645  docker container rm  f36d0d9aff84 7f2cd36c3272
+  646  docker container ls -a
+  647  docker container run -it --rm --name mycont1 0184b2610dca  bash
+  648  docker container ls -a
+  649  #docker container rm  f36d0d9aff84 7f2cd36c3272
+  650  #-it + --rm  == docker container rm  f36d0d9aff84
+  651  docker container run -d --rm --name mycont1 0184b2610dca  bash
+  652  docker container ls -a
+  653  docker image ls
+  654  vi Dockerfile
+  655  ls
+  656  vi Dockerfile
+  657  docker build -t myimg:2.0 .
+  658  cd /tmp/
+  659  vi testfile
+  660  cd
+  661  docker build -t myimg:2.0 .
+  662  vi Dockerfile
+  663  docker build -t myimg:2.0 .
+  664  ls -ltr /tmp/testfile
+  665  mv /tmp/testfile /home/
+  666  ls -ltr /home/testfile
+  667  vi Dockerfile
+  668  docker build -t myimg:2.0 .
+  669  chmod 777 /home/testfile
+  670  docker build -t myimg:2.0 .
+  671  ls
+  672  cd docker/
+  673  ls
+  674  pwd
+  675  vi Dockerfile
+  676  cd ..
+  677  vi Dockerfile
+  678  cd docker/
+  679  ls
+  680  pwd
+  681  cd ..
+  682  vi Dockerfile
+  683  docker build -t myimg:2.0 .
+  684  vi Dockerfile
+  685  docker build -t myimg:2.0 .
+  686  ls -ltr /home/testfile
+  687  vi Dockerfile
+  688  ls
+  689  vi testfile
+  690  ls
+  691  docker build -t myimg:3.0 .
+  692  docker container run -it --name mycont 9a7148d41024 bash
+  693  vi Dockerfile
+  694  tar -cvzf tmp.tar /tmp
+  695  ls -ltrh
+  696  ls
+  697  vi Dockerfile
+  698  docker build -t myimg:4.0 .
+  699  docker container run -it --name mycont myimg:4.0 bash
+  700  docker container prune
+  701  docker container run --rm -it --name mycont myimg:4.0 bash
+  702  cat Dockerfile
+  703  vi Dockerfile
+  704  docker container run --rm -it --name mycont myimg:4.0 bash
+  705  vi Dockerfile
+  706  docker build -t myimg:5.0 .
+  707  docker container run --rm -it --name mycont myimg:5.0 bash
+  708  cat Dockerfile
+  709  vi Dockerfile
+  710  docker build -t myimg:6.0 .
+  711  docker container run --rm -it --name mycont myimg:6.0 bash
+  712  vi Dockerfile
+  713  docker build -t myimg:6.0 .
+  714  docker container run --rm -it --name mycont myimg:6.0 bash
+  715  vi Dockerfile
+  716  docker image ls
+  717  vi Dockerfile
+  718  docker build -t myimg:7.0 .
+  719  docker container run --rm -it --name mycont myimg:7.0 bash
+  720  vi Dockerfile
+  721  docker build -t myimg:8.0 .
+  722  docker container run --rm -it --name mycont myimg:8.0 bash
+  723  vi Dockerfile
+  724  docker container run --rm -it --name mycont myimg:8.0 bash
+  725  vi Dockerfile
+  726  docker container run --rm -it --name mycont --env dbname=testdb myimg:8.0                                                                                         bash
+  727  vi Dockerfile
+  728  cd /
+  729  ls
+  730  cd /home/salil
+  731  ls
+  732  cd /
+  733  cd
+  734  ls
+  735  #devsecops
+  736  vi Dockerfile
+  737  docker build -t myimg:9.0 .
+  738  docker container run --rm -it --name mycont myimg:9.0 bash
+  739  cat Dockerfile
+  740  #docker container run --rm -it --name mycont --env dbname=testdb myimg:8.                                                                                        0 bash
+  741  docker build -t myimg:10.0 --build-arg version=3 .
+  742  docker container run --rm -it --name mycont myimg:10.0 bash
+  743  #docker build -t myimg:10.0 --build-arg version=3 .
+  744  cat Dockerfile
+  745  vi Dockerfile
+  746  docker container ls
+  747  vi Dockerfile
+  748  #docker build -t myimg:11.0  .
+  749  docker build -t myimg:11.0  .
+  750  docker container run --rm -it --name mycont myimg:10.0
+  751  docker container run --rm -it --name mycont myimg:11.0
+  752  docker container ls -a
+  753  docker container run  -it --name mycont myimg:11.0
+  754  docker container run  -it --name mycont myimg:10.0
+  755  docker container run  -it --name mycont1 myimg:10.0
+  756  #docker container run  -it --name mycont myimg:11.0
+  757  docker container ls -a
+  758  vi Dockerfile
+  759  docker build -t myimg:12.0  .
+  760  #docker container run  -it --name mycont myimg:12.0
+  761  docker container run  -it --name mycont myimg:12.0
+  762  docker container prune
+  763  docker container run  -it --name mycont myimg:12.0
+  764  doker container ls -a
+  765  docker container ls -a
+  766  docker container rm -f 1220b6cf4671
+  767  docker container run  -it --name mycont myimg:12.0 bash
+  768  docker container rm mycont
+  769  docker container run  -d --name mycont myimg:12.0
+  770  docker container ls -a
+  771  docker logs b10e9b899acb
+  772  vi Dockerfile
+  773  docker container rm mycont
+  774  docker container run --rm -it --name mycont myimg:12.0
+  775  docker container run --rm -it --name mycont myimg:12.0 boloy
+  776  docker container run --rm -it --name mycont myimg:12.0 date
+  777  docker container run --rm -it --name mycont myimg:12.0 bash
+  778  docker container run --rm -it --name mycont myimg:12.0 chetan
+  779  vi Dockerfile
+  780  #docker build -t myimg:10.0 --build-arg version=3 .
+  781  #$app $version
+  782  vi Dockerfile
+  783  docker build -t myimg:13.0  .
+  784  docker container run --rm -it --name mycont myimg:13.0
+  785  docker container run --rm -it --name mycont myimg:13.0 chetan
+  786  vi Dockerfile
+  787  docker build -t myimg:14.0  .
+  788  docker container run --rm -it --name mycont myimg:14.0
+  789  docker container run --rm -it --name mycont myimg:14.0 chetan
+  790  docker container run --rm -it --name mycont myimg:13.0 chetan
+  791  vi Dockerfile
+  792  ls
+  793  mv docker/useradd.sh .
+  794  ls
+  795  cat useradd.sh
+  796  bash useradd.sh
+  797  cat useradd.sh
+  798  ls -ltr
+  799  bash useradd.sh
+  800  cat useradd.sh
+  801  useradd
+  802  useradd karan
+  803  id karan
+  804  id leo
+  805  useradd leo
+  806  id leo
+  807  useradd
+  808  cat useradd.sh
+  809  #useradd leo
+  810  bash useradd.sh chumki
+  811  id chumki
+  812  id neha
+  813  bash useradd.sh neha
+  814  id neha
+  815  cat useradd.sh
+  816  vi useradd.sh
+  817  id karan
+  818  userdel -r karan
+  819  id karan
+  820  cat useradd.sh
+  821  bash useradd.sh
+  822  id karan
+  823  vi useradd.sh
+  824  bash useradd.sh neha
+  825  bash useradd.sh neha1
+  826  userdel -r leo
+  827  userdel -r neha
+  828  userdel -r neha1
+  829  useradd neha leo salil karan chetan
+  830  vi useradd.sh
+  831  bash useradd.sh
+  832  vi Dockerfile
+  833  vi useradd.sh
+  834  vi Dockerfile
+  835  docekr build -t myimg:15.0 .
+  836  docker build -t myimg:15.0 .
+  837  docker container run -d --name mycont1 myimg:15.0
+  838  docker container ls
+  839  docker container ls -a
+  840  docker logs 08277783e1c8
+  841  vi Dockerfile
+  842  docker build -t myimg:15.0 .
+  843  docker container run -it --name mycont2 myimg:15.0
+  844  vi Dockerfile
+  845  docker container run -it --name mycont2 myimg:15.0
+  846  docker container run -it --name mycont3 myimg:15.0
+  847  docker container prune
+  848  vi Dockerfile
+  849  docker build -t myimg:15.0 .
+  850  docker container run -d --name mycont1 myimg:15.0
+  851  docker container ls -a
+  852  docker logs e7e7aa344ab2
+  853  vi Dockerfile
+  854  cd  docker/
+  855  ls
+  856  vi Dockerfile
+  857  vi Dockerfile-2
+  858  cd ..
+  859  vi Dockerfile
+  860  docker build -t myimg:15.0 .
+  861  docker container run -d --name mycont2 myimg:15.0
+  862  docker container ls -a
+  863  docker container exec -it fa7274bbd30e bash
+  864  docker container run -d --name mycont3 myimg:11.0
+  865  docker container run -it --name mycont4 myimg:11.0
+  866  docker container run -it --name mycont5 myimg:10.0
+  867  docker container prune
+  868  vi Dockerfile
+  869  docker build -t myimg:16.0 .
+  870  docker container run -d --name mycont5 myimg:16.0
+  871  docker container ls -a
+  872  docker container exec -it 2f32f212c017 bash
+  873  docker logs 2f32f212c017
+  874  #docker container run -d --name mycont5 myimg:16.0
+  875  cat Dockerfile
+  876  docker container run -d --name mycont6 myimg:16.0  soumtira
+  877  docker container exec -it mycont6 bash
+  878  vi Dockerfile
+  879  docker container ls -a
+  880  docker image ls
+  881  docker image prune
+  882  docker image ls
+  883  docker image rm -f 0184b2610dca  f7aaf2c1dfd8 9a7148d41024 4b3a63453e17                                                                                           0e053a4c9115 a0d06c1ac90d a6b7b6dddc3a 9b6ee38587c9 9261d20305af 917f904935e0 a                                                                                        4e68ba6871f
+  884  docker image ls
+  885  vi Dockerfile
+  886  docker build -t myimg:16.0 .
+  887  docker image ls
+  888  docker image prune
+  889  docker image ls
+  890  docker image rm -f 10223c15d8f7
+  891  docker image ls
+  892  vi Dockerfile
+  893  docker build -t myimg:16.0 .
+  894  docker image ls
+  895  #dangling images
+  896  docker container ls -a
+  897  docker container prune
+  898  docker image ls
+  899  docker image prune
+  900  docker image ls
+  901  docker container run -d --name mycont2 ceb753d29b65
+  902  docker container ls
+  903  vi Dockerfile
+  904  docker build -t myimg:16.0 .
+  905  docker image ls
+  906  docker image prune
+  907  docker image ls
+  908  docker container ls
+  909  docker image ls
+  910  docker build -t myimg:16.0 .
+  911  docker image ls
+  912  cat Dockerfile
+  913  vi Dockerfile
+  914  docker build -t myimg:17.0 .
+  915  docker container run -it --name mycont3 myimg:17.0
+  916  cat Dockerfile
+  917  vi Dockerfile
+  918  docker build -t myimg:17.0 .
+  919  docker container run -it --name mycont3 myimg:17.0
+  920  docker container run -it --name mycont4 myimg:17.0
+  921  cat Dockerfile
+  922  docker container run -it --name mycont5 myimg:17.0 user3
+  923  docker build -t myimg:17.0 .
+  924  vi Dockerfile
+  925  docker image ls
+  926  cp Dockerfile Dockerfile-2
+  927  vi Dockerfile
+  928  mv Dockerfile Dockerfile-3
+  929  mv Dockerfile-2 Dockerfile
+  930  mv Dockerfile-3 Dockerfile-2
+  931  ls
+  932  vi Dockerfile
+  933  vi Dockerfile-2
+  934  cat Dockerfile
+  935  cat Dockerfile-2
+  936  #docker build -t myimg:17.0 .
+  937  docker build -t newimg:1.0 -f Dockerfile-2 .
+  938  cd /var/lib/docker
+  939  ls
+  940  cd image/
+  941  ls
+  942  cd overlay2/
+  943  ls
+  944  cd layerdb/
+  945  ls
+  946  cd sha256/
+  947  ls
+  948  cd ..
+  949  cd imagedb/
+  950  ls
+  951  cd metadata/sha256/
+  952  ls
+  953  cd 964f81f8da71d3ca90195c7b270cfc7d0bdc81b7805c2785e769729265134474
+  954  ls
+  955  cd ..
+  956  cd ..'
+  957  cd ..
+  958  cd ../layerdb/
+  959  ls
+  960  cd sha256/
+  961  ls
+  962  cd cde508b1950586be5f33b9d7f75c60f5127770af87a8ee5e1648861702faf47d
+  963  ls
+  964  cd ..
+  965  ls
+  966  cd ..
+  967  ls
+  968  pwd
+  969  docker info
+  970  ls -ltr
+  971  cd
+  972  docker image ls
+  973  docker image rm  c06e9b4b92f9
+  974  docker rmi  9199c3cf2f17
+  975  cd /var/lib/docker
+  976  s
+  977  ls
+  978  cd
+  979  vi Dockerfile
+  980  docker build -t myimg:18.0 .
+  981  docker container -d --name newcont1 myimg:18.0
+  982  vi Dockerfile
+  983  docker container -d --name newcont2 myimg:18.0 bash
+  984  docker container run -d --name newcont2 myimg:18.0 bash
+  985  docker container ls -a
+  986  vi Dockerfile
+  987  docker build -t myimg:18.0 .
+  988  docker container run -d --name newcont3 myimg:18.0 bash
+  989  docker container ls -a
+  990  vi Dockerfile
+  991  docker build -t myimg:18.0 .
+  992  docker container run -d --name newcont4 myimg:18.0 bash
+  993  docker container ls -a
+  994  docker container run -d --name newcont5 myimg:18.0
+  995  docker container ls -a
+  996  vi Dockerfile
+  997  docker build -t myimg:19.0 .
+  998  docker container run -d --name newcont6 myimg:19.0
+  999  docker container ls -a

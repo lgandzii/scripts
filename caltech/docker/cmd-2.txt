@@ -1,0 +1,456 @@
+  835  docker --version
+  836  docker container ls
+  837  docker ps
+  838  docker image ls
+  839  docker images
+  840  docker container run nginx
+  841  docker container run -it nginx
+  842  docker container run -it ubuntu
+  843  docker container run -d ubuntu
+  844  docker container run -d nginx
+  845  docker run -d nginx
+  846  docker run -d ubuntu
+  847  docker container run -i ubuntu
+  848  docker container run -t ubuntu
+  849  docker container run -it ubuntu
+  850  docker container run -d ubuntu
+  851  docker container ls
+  852  docker container ls -a
+  853  docker container ls
+  854  docker container run -d ubuntu
+  855  docker container run -d nginx
+  856  docker container ls
+  857  docker container run -d --name testcont nginx
+  858  docker container ls
+  859  docker container ls -a
+  860  docker system prune
+  861  docker container ls -a
+  862  docker container rm -f $(docker ps -qa)
+  863  docker container ls -a
+  864  docker container run -d --name testcont ubuntu
+  865  docker container ls -a
+  866  docker container run -d --name testcont ubuntu sleep 300
+  867  docker container run -d --name testcont1 ubuntu sleep 300
+  868  docker container ls -a
+  869  docker container run -d --name testcont2 ubuntu sleep 30
+  870  docker container ls -a
+  871  watch docker container ls -
+  872  watch docker container ls -a
+  873  docker container ls -a
+  874  docker container run -it --name testcont3 ubuntu
+  875  docker container ls -a
+  876  docker container run -d --name testcont4 ubuntu
+  877  askd;lasdk
+  878  slkf;ls
+  879  docker container run -it --name testcont5 ubuntu
+  880  docker container ls -a
+  881  docker container run -it --name testcont3 ubuntu
+  882  docker container run -it --name testcont6 ubuntu
+  883  docker container ls -a
+  884  docker container ls
+  885  docker container ls -a
+  886  docker container rm 45b64b094065
+  887  docker container ls -a
+  888  docker container rm 3bac
+  889  docker container ls
+  890  docker container ls -a
+  891  docker container rm testcont4
+  892  docker container ls -a
+  893  docker container run -d --name testcont4 nginx
+  894  docker container ls
+  895  docker container rm 29f6f662060a
+  896  docker container ls
+  897  docker container stop 29f6f662060a
+  898  docker container ls
+  899  docker container ls -a
+  900  docker container start 29f6f662060a
+  901  docker container ls
+  902  docker container ls -a
+  903  docker container start 22ae85095d1d
+  904  docker container ls -a
+  905  docker container rm 29f6f662060a
+  906  docker container rm -f 29f6f662060a
+  907  docker container rm -f 22ae85095d1d
+  908  docker container ls -a
+  909  docker container run -d --name testcont4 nginx
+  910  docker container ls -a
+  911  docker container stop 03cf3562c39e
+  912  docker container rm 03cf3562c39e
+  913  #docker container rm -f 22ae85095d1d
+  914  docker container run -d --name testcont4 nginx
+  915  docker container ls
+  916  docker container pause ec8db4819f35
+  917  docker container ls
+  918  docker container unpause ec8db4819f35
+  919  docker container ls
+  920  #docker container rm -f testcont4
+  921  docker container rm -f testcont4
+  922  docker container ls
+  923  docker container run -d --name testcont4 nginx
+  924  docker container ls
+  925  docker container rename testcont4 mycont\
+  926  docker container ls
+  927  docker container exec -it mycont bash
+  928  docker container exec -it mycont
+  929  docker container exec -it mycont sh
+  930  docker container exec -it mycont date
+  931  docker container exec -it mycont uptime
+  932  docker container exec -it mycont ls
+  933  docker container exec -it mycont bash
+  934  cat /etc/shells
+  935  docker container exec -it mycont bash
+  936  docker container exec -it mycont sh
+  937  docker container exec -it mycont bash
+  938  #docker container exec -it mycont bash
+  939  docker container exec -it mycont bash
+  940  docker container ls
+  941  docker container exec -it mycont bash
+  942  docker container ls
+  943  docker container stop mycont
+  944  docker container start mycont
+  945  docker container run -d --name testcont5 -v /tmp:/etc/ nginx
+  946  docker container prune
+  947  docker container run -d --name testcont5 -v /tmp:/etc/ nginx
+  948  docker container run -d --name testcont6  nginx
+  949  docker container ls
+  950  docker top
+  951  docker top f8eaec5de693
+  952  docker stat
+  953  docker stats
+  954  free -m
+  955  docker df
+  956  docker df -f
+  957  docker df -h
+  958  docker df
+  959  docker -h | grep df
+  960  docker --help | grep df
+  961  docker system df
+  962  docker container ls
+  963  docker container ls -a
+  964  docker container rm 111baf5ff701
+  965  docker container ls -a
+  966  docker system df
+  967  docker container ls -a
+  968  docker container ls
+  969  docker container ls -a
+  970  docker container stop f8eaec5de693
+  971  docker container kill 23b7c678405b
+  972  docker container ls -a
+  973  docker container run -d --name testcont  nginx
+  974  docker container ls -a
+  975  cd /var/lib/docker
+  976  ls
+  977  cd containers
+  978  ls
+  979  docker container ls -a
+  980  docker container rm  f8eaec5de693
+  981  ls
+  982  cd 23b7c678405bc602aef820dcf56bd00fd20590f3efde99ee97f20ff17a572691
+  983  ls
+  984  cd ..
+  985  cd
+  986  docker container ls -a
+  987  docker container rm -f 23b7c678405b
+  988  docker container ls
+  989  docker container exec -it f162cde98d28 bash
+  990  docker container ls
+  991  hostname -i
+  992  systemctl stop httpd
+  993  docker container ls
+  994  #port mapping
+  995  docker container run -d -p 88:80  --name maincont  nginx
+  996  docker container ls
+  997  #docker container run -d -p 88:80  --name maincont  nginx
+  998  history
+  999  docker container ls
+ 1000  docker image ls
+ 1001  docker image ls -a
+ 1002  docker container ls -a
+ 1003  docker container run -d --name testcont nginx
+ 1004  docker container run -d --name testcont1 nginx
+ 1005  docker image ls
+ 1006  docker container ls
+ 1007  docker container exec -it testcont1 bash
+ 1008  docker container ls
+ 1009  docker container rm -f a11f6f03251a
+ 1010  docker container ls -a
+ 1011  docker container run -d --name testcont1 nginx
+ 1012  docker container ls -a
+ 1013  docker container exec -it testcont1 bash
+ 1014  docker container ls -a
+ 1015  docker container rm 01f5a2695e7b f162cde98d28
+ 1016  docker container ls -a
+ 1017  docker container exec -it testcont1 bash
+ 1018  docker container run -d -v simplivol:/var  -p 8080:80 --name volcont nginx
+ 1019  docker container ls
+ 1020  cd /var/lib/docker
+ 1021  ls
+ 1022  cd volumes
+ 1023  pwd
+ 1024  ls
+ 1025  cd simplivol
+ 1026  ls
+ 1027  cd _data/
+ 1028  ls
+ 1029  pwd
+ 1030  ls
+ 1031  docker container exec -it volcont bash
+ 1032  pwd
+ 1033  ls
+ 1034  docker container ls
+ 1035  docker container rm -f volcont testcont1
+ 1036  docker container ls
+ 1037  ls
+ 1038  cd
+ 1039  docker volume ls
+ 1040  docker volume rm myvol newvol
+ 1041  docker volume ls
+ 1042  docker volume rm simplivol
+ 1043  cd -
+ 1044  cd /var/lib/docker/volumes
+ 1045  ls
+ 1046  cd
+ 1047  docker volume ls
+ 1048  docker volume create secondvol
+ 1049  docker volume ls
+ 1050  cd -
+ 1051  ls
+ 1052  cd
+ 1053  docker volume ls
+ 1054  #docker volume create secondvol
+ 1055  #docker volume rm simplivol
+ 1056  #docker volume ls
+ 1057  docker container run -d -v secondvol:/var  -p 8080:80 --name secondcont nginx
+ 1058  docker container run -d -v thirdvolvol:/var  -p 8080:80 --name thirdcont nginx
+ 1059  docker container run -d -v thirdvolvol:/var  -p 8888:80 --name thirdcont nginx
+ 1060  docker container rm -f thirdcont
+ 1061  docker container run -d -v thirdvolvol:/var  -p 8888:80 --name thirdcont nginx
+ 1062  #docker volume ls
+ 1063  docker volume ls
+ 1064  cd /var/lib/docker/volumes/
+ 1065  ls
+ 1066  #docker container run -d -v secondvol:/var  -p 8080:80 --name secondcont nginx
+ 1067  #docker container run -d -v thirdvolvol:/var  -p 8888:80 --name thirdcont nginx
+ 1068  cd thirdvolvol/_data/
+ 1069  ls
+ 1070  cd ../..
+ 1071  cd secondvol/_data/
+ 1072  ls
+ 1073  pwd
+ 1074  vi basefile
+ 1075  pwd
+ 1076  docker container exec -it secondcont bash
+ 1077  ##docker container run -d -v secondvol:/var  -p 8080:80 --name secondcont nginx
+ 1078  cd
+ 1079  df -h
+ 1080  cd /mnt/
+ 1081  ls
+ 1082  rm -rf mydata/
+ 1083  ls
+ 1084  pwd
+ 1085  ls
+ 1086  ls -ltr
+ 1087  #docker container run -d -v /mnt/newdata:/var -p 8080:80 --name newcont nginx
+ 1088  doker container ls
+ 1089  docker container ls
+ 1090  docker container run -d -v /mnt/newdata:/var -p 8088:80 --name newcont nginx
+ 1091  docker container ls -a
+ 1092  #docker container run -d -v /mnt/newdata:/var -p 8088:80 --name newcont nginx
+ 1093  docker container ls -a
+ 1094  docker logs newcont
+ 1095  #docker container run -d -v /mnt/newdata:/var -p 8088:80 --name newcont nginx
+ 1096  #docker container run -d -v secondvol:/var  -p 8080:80 --name secondcont nginx
+ 1097  #bind mount
+ 1098  #docker volumes
+ 1099  ls -ltr
+ 1100  docker volume ls
+ 1101  docker logs newcont
+ 1102  cd newdata/
+ 1103  ls
+ 1104  pwd
+ 1105  ls
+ 1106  docker container run -d -v /mnt/newdata:/tmp -p 8089:80 --name newcont1 nginx
+ 1107  docker container ls
+ 1108  ls
+ 1109  pwd
+ 1110  docker container exec -it newcont1 bash
+ 1111  ls
+ 1112  pwd
+ 1113  vi newfile1
+ 1114  pwd
+ 1115  ls
+ 1116  docker container run -d -v /mnt/newdata:/tmp -p 8099:80 --name newcont2 nginx
+ 1117  docker container exec -it newcont2 bash
+ 1118  cd
+ 1119  cd /mnt/
+ 1120  ls
+ 1121  docker container prune
+ 1122  docker container ls
+ 1123  docker container rm -f newcont2 newcont1 thirdcont secondcont
+ 1124  docker container ls
+ 1125  ls
+ 1126  pwd
+ 1127  docker container run -d  --name newcont nginx
+ 1128  docker container ls
+ 1129  docker logs b4692c230bf6
+ 1130  docker container exec -it b4692c230bf6 bash
+ 1131  ls
+ 1132  #docker container run -d  --name newcont nginx
+ 1133  docker container run -d -v /mnt/cyz:/var    --name newcont nginx
+ 1134  docker container run -d -v /mnt/cyz:/var    --name newcont1 nginx
+ 1135  docker container ls -a
+ 1136  docker logs newcont1
+ 1137  docker container exec -it newcont1 bash
+ 1138  docker container exec -it newcont bash
+ 1139  docker ls
+ 1140  docker container ls
+ 1141  docker container run -d -v /mnt/cyz:/tmp    --name newcont1 nginx
+ 1142  docker container run -d -v /mnt/cyz:/tmp    --name newcont2 nginx
+ 1143  docker container exec -it newcont2 bash
+ 1144  docker container run -d -v /mnt/cyz:/home    --name newcont3 nginx
+ 1145  docker container exec -it newcont3 bash
+ 1146  cd /mnt/cyz
+ 1147  ls
+ 1148  cat applog
+ 1149  docker container rm -f  newcont3
+ 1150  cat applog
+ 1151  history
+ 1152  ls -ltr
+ 1153  docker container exec -it newcont3 bash
+ 1154  cd
+ 1155  ls
+ 1156  docker container ls
+ 1157  docker container ls -a
+ 1158  docker container prune
+ 1159  docker container ls -a
+ 1160  docker container ls
+ 1161  ls
+ 1162  vi myfile
+ 1163  ls
+ 1164  docker container cp myfile 4480a5482331:/home/
+ 1165  docker container exec -it 4480a5482331 bash
+ 1166  docker container ls
+ 1167  docker container exec -it b469 bash
+ 1168  docker container cp b4692c230bf6:/etc/namefile .
+ 1169  ls -ltr
+ 1170  cat namefile
+ 1171  docker container cp b4692c230bf6:/etc/namefile /tmp
+ 1172  cd /tmp
+ 1173  ls -ltr
+ 1174  cd
+ 1175  systemctl sttus docker
+ 1176  systemctl status docker
+ 1177  docker info
+ 1178  docker image ls
+ 1179  docker images
+ 1180  docker image ls
+ 1181  docker container prune
+ 1182  docker container ls
+ 1183  docker container rm -f 4480a5482331 b4692c230bf6
+ 1184  docker container ls -a
+ 1185  docker image ls
+ 1186  docker image rm ubuntu nginx
+ 1187  docker image ls
+ 1188  docker container run -d --name testcont nginx
+ 1189  cd /var/lib/docker
+ 1190  ls
+ 1191  cd image/
+ 1192  ls
+ 1193  cd overlay2/
+ 1194  ls
+ 1195  cd imagedb/
+ 1196  ls
+ 1197  cd content/
+ 1198  ls
+ 1199  cd sha256/
+ 1200  ls
+ 1201  docker image ls
+ 1202  pwd
+ 1203  cd
+ 1204  docker container run -d --name testcont nginx
+ 1205  #library/nginx == docker.io/library/nginx
+ 1206  docker container run -d --name testcont nginx
+ 1207  docker container run -d --name testcont1 ubuntu
+ 1208  docker container run -d --name testcont3 nginx
+ 1209  docker image ls
+ 1210  docker container run -d --name testcont4 openjdk
+ 1211  docker container run -d --name testcont4 python
+ 1212  docker image ls
+ 1213  docker image rm 86ac1e3337a9
+ 1214  docker image ls
+ 1215  #docker image rm openjdk:latest
+ 1216  #docker image rm openjdk
+ 1217  #library/nginx == docker.io/library/nginx
+ 1218  docker image rm openjdk
+ 1219  docker container rm -f fed6bac9ebb2
+ 1220  docker image rm openjdk
+ 1221  docker image ls
+ 1222  #docker image rm openjdk
+ 1223  #docker image rm -f openjdk
+ 1224  #Dockerfile
+ 1225  ls
+ 1226  rm myfile
+ 1227  rm namefile
+ 1228  cd docker/
+ 1229  ls
+ 1230  cd ..
+ 1231  ls
+ 1232  vi Dockerfile
+ 1233  cat Dockerfile
+ 1234  #docker  build -t myimg .
+ 1235  ls
+ 1236  docker  build -t myimg .
+ 1237  docker image ls
+ 1238  cat Dockerfile
+ 1239  vi Dockerfile
+ 1240  #RUN apt-get update
+ 1241  cat Dockerfile
+ 1242  docker  build -t myimg:latest .
+ 1243  docker image ls
+ 1244  cat Dockerfile
+ 1245  #docker  build -t myimg:latest .
+ 1246  docker  build -t myimg:latest
+ 1247  mv Dockerfile /tmp
+ 1248  ls
+ 1249  docker  build -t myimg:latest .
+ 1250  pwd
+ 1251  docker  build -t myimg:latest /tmp/
+ 1252  mv /tmp/Dockerfile .
+ 1253  ls
+ 1254  mv Dockerfile Myfile
+ 1255  docker  build -t myimg:latest .
+ 1256  ls
+ 1257  docker  build -t myimg:latest -f Myfile .
+ 1258  #docker  build -t myimg:latest -f Myfile .
+ 1259  #docker  build -t myimg:latest .
+ 1260  cat Dockerfile
+ 1261  mv Myfile Dockerfile
+ 1262  cat Dockerfile
+ 1263  ls
+ 1264  vi Dockerfile
+ 1265  docker image ls
+ 1266  vi Dockerfile
+ 1267  docker image ls
+ 1268  docker image tag myimg:latest newimg
+ 1269  docker image ls
+ 1270  docker image rm d8b1f10d2973
+ 1271  docker image rm -f d8b1f10d2973
+ 1272  docker image ls
+ 1273  docker  build -t newimg:latest .
+ 1274  docker image ls
+ 1275  docker image tag  newimg myimg
+ 1276  docker image ls
+ 1277  docker image push myimg
+ 1278  docker login
+ 1279  rm /root/.docker/config.json
+ 1280  docker login
+ 1281  docker logout
+ 1282  docker login
+ 1283  rm /root/.docker/config.json
+ 1284  docker login
+ 1285  docker image push myimg
+ 1286  docker image tag myimg salilkul87/myimg
+ 1287  docker image ls
+ 1288  docker image push salilkul87/myimg
+ 1289  #docker image tag myimg salilkul87/myimg
+ 1290  #docker image push salilkul87/myimg
